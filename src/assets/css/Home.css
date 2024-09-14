@@ -1,0 +1,165 @@
+nav {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  padding: 3rem 10rem;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+nav ul {
+  display: flex;
+  gap: 45px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul .nav-link {
+  color: #7d7d7d;
+}
+nav ul .nav-link:hover {
+  text-decoration: underline;
+  color: #9c9c9c;
+}
+nav ul .nav-link.active {
+  color: #E6E6E6;
+  cursor: default;
+}
+
+.hero-container {
+  padding: 0;
+  position: relative;
+  height: 100vh;
+}
+.hero-container .hero-img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-container .hero-content {
+  position: absolute;
+  bottom: 40%;
+  left: 10rem;
+  right: 10rem;
+}
+.hero-container .hero-content .hero-subtitle {
+  color: #f79c57;
+  margin-bottom: 3rem;
+}
+
+.about-container .about-header-container {
+  flex: 1;
+  padding-right: 10rem;
+}
+.about-container .about-header-container .about-header {
+  font-weight: 400;
+  color: #f79c57;
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+.about-container .about-content {
+  flex: 0.8;
+  width: 45rem;
+}
+.about-container .about-content p {
+  color: #bababa;
+  font-size: 14px;
+  line-height: 2.5em;
+  margin-bottom: 5rem;
+}
+.about-container .about-content .about-btn {
+  width: 10rem;
+  height: 2.5rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.detail-container {
+  padding: 15rem 13rem;
+  display: flex;
+  gap: 75px;
+  min-height: 10rem;
+}
+.detail-container .detail-header {
+  writing-mode: vertical-lr; /* or vertical-lr */
+  text-orientation: mixed;
+  font-weight: 400;
+  color: #f79c57;
+  font-size: 25px;
+}
+.detail-container.service-container .services-items {
+  display: flex;
+  flex: 1;
+  gap: 5rem;
+}
+.detail-container.service-container .services-items .service-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.detail-container.service-container .services-items .service-container svg {
+  fill: white;
+  height: 3rem;
+  width: 3rem;
+}
+.detail-container.service-container .services-items .service-container p {
+  color: #bababa;
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.project-container {
+  position: relative;
+  background-color: #171921;
+  height: 300vh;
+  display: flex;
+}
+.project-container .project-content {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 1rem;
+  justify-items: center;
+  height: 100vh;
+  padding: 5rem;
+  overflow: hidden;
+}
+.project-container .project-content .project-details {
+  flex: 0.2;
+}
+.project-container .project-content .project-details h1 {
+  -webkit-text-stroke: 2px #f79c57; /* width and color */
+  color: transparent;
+  writing-mode: vertical-lr; /* or vertical-lr */
+  text-orientation: mixed;
+  font-weight: 400;
+  font-size: 15vh;
+}
+.project-container .project-content .gallery-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.project-container .project-content .gallery-container .gallery-box {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  gap: 2rem;
+  overflow: hidden;
+}
+.project-container .project-content .gallery-container .gallery-box .img-container {
+  height: 100%;
+  width: 40rem;
+}
+.project-container .project-content .gallery-container .gallery-box .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=Home.css.map */
