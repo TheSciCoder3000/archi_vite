@@ -1,0 +1,42 @@
+.auth-container {
+    height: 100vh;
+
+    background: rgb(64,32,9);
+    background: radial-gradient(circle, rgb(20, 22, 31) 0%, rgba(15,16,21,1) 100%);
+
+    display: flex;
+
+
+    .auth-card {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 100%;
+        gap: 1rem;
+        margin: auto;
+        width: 30rem;
+        padding: 3rem;
+        border: 2px solid rgb(44, 47, 61);
+        border-radius: 10px;
+        background-color: rgba(15,16,21,1);
+
+        h1 {
+            margin-bottom: 3rem;
+        }
+
+        div {
+            margin-bottom: 0.5rem;
+            label {
+                color: rgb(164, 164, 164);
+            }
+    
+            input {
+                height: 0.5rem;
+                border-radius: 5px;
+                border: 1px solid rgb(57, 62, 81);
+                background-color: rgb(10, 11, 15);
+            }
+        }
+
+    }
+}
