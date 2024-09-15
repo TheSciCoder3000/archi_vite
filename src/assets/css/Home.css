@@ -49,8 +49,7 @@ nav ul .nav-link.active {
 }
 
 .about-container .about-header-container {
-  flex: 1;
-  padding-right: 10rem;
+  flex: 1.5;
 }
 .about-container .about-header-container .about-header {
   font-weight: 400;
@@ -58,8 +57,11 @@ nav ul .nav-link.active {
   font-size: 25px;
   margin-bottom: 2rem;
 }
+.about-container .about-header-container h2 {
+  font-size: 6vh;
+}
 .about-container .about-content {
-  flex: 0.8;
+  flex: 1;
   width: 45rem;
 }
 .about-container .about-content p {
@@ -78,10 +80,25 @@ nav ul .nav-link.active {
 }
 
 .detail-container {
-  padding: 15rem 13rem;
+  padding: 8rem 13rem;
   display: flex;
   gap: 75px;
-  min-height: 10rem;
+  min-height: 50vh;
+}
+@media (max-width: 1530px) {
+  .detail-container {
+    padding: 8rem 5rem;
+  }
+}
+@media (max-width: 1300px) {
+  .detail-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1530px) {
+  .detail-container {
+    padding: 8rem 10rem;
+  }
 }
 .detail-container .detail-header {
   writing-mode: vertical-lr; /* or vertical-lr */
@@ -90,25 +107,46 @@ nav ul .nav-link.active {
   color: #f79c57;
   font-size: 25px;
 }
+@media (max-width: 1300px) {
+  .detail-container .detail-header {
+    text-orientation: sideways;
+    writing-mode: horizontal-tb;
+  }
+}
 .detail-container.service-container .services-items {
   display: flex;
   flex: 1;
   gap: 5rem;
 }
-.detail-container.service-container .services-items .service-container {
+@media (max-width: 1100px) {
+  .detail-container.service-container .services-items {
+    flex-direction: column;
+  }
+}
+.detail-container.service-container .services-items .service-box {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-.detail-container.service-container .services-items .service-container svg {
+@media (max-width: 1100px) {
+  .detail-container.service-container .services-items .service-box {
+    align-items: center;
+  }
+}
+.detail-container.service-container .services-items .service-box svg {
   fill: white;
   height: 3rem;
   width: 3rem;
 }
-.detail-container.service-container .services-items .service-container p {
+.detail-container.service-container .services-items .service-box p {
   color: #bababa;
   font-size: 14px;
   line-height: 2em;
+}
+@media (max-width: 1530px) {
+  .detail-container.service-container .services-items .service-box p {
+    font-size: 12px;
+  }
 }
 
 .project-container {
@@ -155,7 +193,7 @@ nav ul .nav-link.active {
 }
 .project-container .project-content .gallery-container .gallery-box .img-container {
   height: 100%;
-  width: 40rem;
+  width: 37vw;
 }
 .project-container .project-content .gallery-container .gallery-box .img-container img {
   width: 100%;
