@@ -1,6 +1,5 @@
 import '../assets/css/Home.css'
 
-import HeroImg from '../assets/img/hero_img.jpg';
 import Navbar from '../components/Navbar';
 
 import Img1 from '../assets/img/img_1.jpg';
@@ -9,6 +8,7 @@ import Img3 from '../assets/img/img_3.jpg';
 import Img4 from '../assets/img/img_4.jpg';
 import { easeInOut, motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import MultiLayeredHero from '../components/MultiLayeredHero';
 
 function Home() {
   const gallery = [Img1, Img2, Img3, Img4];
@@ -24,13 +24,7 @@ function Home() {
       <Navbar />
 
       {/* <!-- Hero Section --> */}
-      <div className="hero-container">
-        <img className="hero-img" src={HeroImg} alt="hero_img" />
-        <div className="hero-content">
-          <h4 className="hero-subtitle">The future is Now</h4>
-          <h1>Discover Premium Architectural Designs and Materials</h1>
-        </div>
-      </div>
+      <MultiLayeredHero />
 
       {/* <!-- About Us --> */}
       <div className="detail-container about-container">

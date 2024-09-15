@@ -7,7 +7,7 @@ nav {
     padding: 3rem 10rem;
     left: 0;
     right: 0;
-    z-index: 5;
+    z-index: 50;
 
     ul {
         display: flex;
@@ -35,11 +35,41 @@ nav {
 .hero-container {
     padding: 0;
     position: relative;
+    overflow: hidden;
     height: 100vh;
 
+    h1 {
+        position: relative;
+        z-index: 10;
+        top: 10%;
+        font-weight: 800;
+        color: white;
+        font-size: 21vw;
+        
+        -webkit-text-stroke: 10px white; /* width and color */
+        color: transparent;
+
+        span {
+            font-weight: 800;
+            color: white;
+            font-size: 21vw;
+            
+            -webkit-text-stroke: 10px white;
+        }
+    }
+    
+
     .hero-img {
-        height: 100%;
-        width: 100%;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        object-fit: cover;
+    }
+
+    .mask-img {
+        position: absolute;
+        inset: 0;
+        z-index: 20;
         object-fit: cover;
     }
 
