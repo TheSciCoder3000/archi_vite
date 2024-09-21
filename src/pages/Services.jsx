@@ -1,4 +1,6 @@
-import AboutImg from "../assets/img/drawing.jpg"
+import ServiceImg from "../assets/img/drawing.jpg"
+
+import Architect from "../assets/img/architect.jpg"
 
 import Gallery1 from "../assets/img/gallery1.jpg"
 import Gallery2 from "../assets/img/gallery2.jpg"
@@ -65,7 +67,7 @@ const Services = () => {
     return (
         <div className="main-service-container">
             <div className="service-hero">
-                <img src={AboutImg} alt="service-hero" />
+                <img src={ServiceImg} alt="service-hero" />
                 <div className="grade">
                 </div>
                 <div className="service-hero-text-container">
@@ -73,16 +75,34 @@ const Services = () => {
                     <h1>Crafting Innovative Spaces with Precision and Vision</h1>
                 </div>
             </div>
+            <div className="service-description">
+                <div className="service-content">
+                    <div className="img-container">
+                        <img src={Architect} alt="" />
+                    </div>
+                    <div className="description-container">
+                        <h2 className="archi-font">Our Services</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Aliquam tempore reprehenderit vero quam inventore voluptates
+                            iusto quisquam corrupti culpa voluptatum, alias magni neque
+                            omnis ad optio assumenda quaerat, quod sit sunt. Ratione id
+                            blanditiis labore!
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div className="service-gallery-container">
+                <h1 className="archi-font">PROJECTS</h1>
                 {serviceList.map((item, indx) =>
                     <div key={indx} className="service-row">
                         <div className={`service-item ${item[0].type}`}>
                             <img src={item[0].img} alt="" />
-                            <h4>{item[0].title}</h4>
+                            <h4 className="archi-font">{item[0].title}</h4>
                         </div>
                         <div className={`service-item ${item[1].type}`}>
                             <img src={item[1].img} alt="" />
-                            <h4>{item[1].title}</h4>
+                            <h4 className="archi-font">{item[1].title}</h4>
                         </div>
                     </div>
                 )}

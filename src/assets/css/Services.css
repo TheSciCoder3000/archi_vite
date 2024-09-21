@@ -45,15 +45,52 @@
   line-height: 1.4em;
   letter-spacing: 0.1em;
 }
+.main-service-container .service-description {
+  background-color: #1c1f29;
+  padding: 10rem 5rem;
+  width: 100%;
+}
+.main-service-container .service-description .service-content {
+  display: flex;
+  gap: 5rem;
+  width: 80vw;
+  margin: auto;
+}
+.main-service-container .service-description .service-content .img-container {
+  flex: 1;
+}
+.main-service-container .service-description .service-content .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-service-container .service-description .service-content .description-container {
+  flex: 1;
+}
+.main-service-container .service-description .service-content .description-container h2 {
+  margin-bottom: 2rem;
+  color: #f79c57;
+}
+.main-service-container .service-description .service-content .description-container p {
+  line-height: 2em;
+  color: #adadad;
+}
 .main-service-container .service-gallery-container {
   padding: 5rem 5rem;
+}
+.main-service-container .service-gallery-container h1 {
+  color: #f79c57;
+  text-align: center;
+  font-size: 8em;
 }
 .main-service-container .service-gallery-container .service-row {
   display: flex;
   gap: 3rem;
   height: 60vh;
   width: 80vw;
-  margin: 20rem auto;
+  margin: 10rem auto;
+  margin-bottom: 25rem;
 }
 .main-service-container .service-gallery-container .service-row .service-item.big {
   flex: 2;

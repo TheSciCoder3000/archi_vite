@@ -1,4 +1,4 @@
-import AboutImg from "../assets/img/drawing.jpg"
+import AboutImg from "../assets/img/about-home.jpg"
 import ArchiTable from "../assets/img/archi_table.jpg"
 import Overlap1 from "../assets/img/overlap1.jpg"
 import Overlap2 from "../assets/img/overlap2.jpg"
