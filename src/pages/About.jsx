@@ -2,9 +2,18 @@ import AboutImg from "../assets/img/drawing.jpg"
 import ArchiTable from "../assets/img/archi_table.jpg"
 import Overlap1 from "../assets/img/overlap1.jpg"
 import Overlap2 from "../assets/img/overlap2.jpg"
+import vid from "../assets/img/vid.mp4"
 import "../assets/css/About.css"
+import { useRef } from "react"
+import { useEffect } from "react"
 
 const About = () => {
+    const vidRef = useRef(null);
+    useEffect(() => {
+        if (vidRef != null) {
+            vidRef.current.playbackRate = 0.5;
+        }
+    }, [])
     return (
         <div className="main-about-container">
             <div className="about-hero">
@@ -15,6 +24,10 @@ const About = () => {
                     <h3>ABOUT US</h3>
                     <h1>Shaping Spaces,<br /> Inspiring Lives</h1>
                 </div>
+            </div>
+            <div className="vid-container">
+                <div className="vid-grade" />
+                <video ref={vidRef} src={vid} autoPlay muted loop />
             </div>
             <div className="about-description">
                 <div className="img-container">
@@ -86,7 +99,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
