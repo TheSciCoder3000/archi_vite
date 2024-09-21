@@ -2,16 +2,12 @@ import * as React from 'react';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import ForgotPassword from '../components/ForgotPassword';
 import '../assets/css/Auth.css';
 import { GoogleIcon, FacebookIcon } from '../components/CcustomIcons';
 
@@ -22,15 +18,8 @@ export default function Register() {
     const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
     const [passwordError, setPasswordError] = React.useState(false);
     const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const [confirmPasswordError, setConfirmPasswordError] = React.useState(false);
+    const [confirmPasswordErrorMessage, setConfirmPasswordErrorMessage] = React.useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,6 +33,7 @@ export default function Register() {
     const validateInputs = () => {
         const email = document.getElementById('email');
         const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password')
 
         let isValid = true;
 
@@ -65,6 +55,15 @@ export default function Register() {
             setPasswordErrorMessage('');
         }
 
+        if (password.value != confirmPassword.value) {
+            setConfirmPasswordError(true)
+            setConfirmPasswordErrorMessage('Password does not match')
+            isValid = false;
+        } else {
+            setConfirmPasswordError(false)
+            setConfirmPasswordErrorMessage('')
+        }
+
         return isValid;
     };
 
@@ -76,7 +75,7 @@ export default function Register() {
                     variant="h4"
                     sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
                 >
-                    Log in
+                    Register
                 </Typography>
                 <Box
                     component="form"
@@ -108,17 +107,7 @@ export default function Register() {
                         />
                     </FormControl>
                     <FormControl>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <FormLabel htmlFor="password">Password</FormLabel>
-                            <Link
-                                component="button"
-                                onClick={handleClickOpen}
-                                variant="body2"
-                                sx={{ alignSelf: 'baseline' }}
-                            >
-                                Forgot your password?
-                            </Link>
-                        </Box>
+                        <FormLabel htmlFor="password">Password</FormLabel>
                         <TextField
                             error={passwordError}
                             helperText={passwordErrorMessage}
@@ -127,38 +116,36 @@ export default function Register() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
-                            autoFocus
                             required
                             fullWidth
                             variant="outlined"
                             color={passwordError ? 'error' : 'primary'}
                         />
                     </FormControl>
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                    />
-                    <ForgotPassword open={open} handleClose={handleClose} />
+                    <FormControl>
+                        <FormLabel htmlFor="confirm-password">Confirm Password</FormLabel>
+                        <TextField
+                            error={confirmPasswordError}
+                            helperText={confirmPasswordErrorMessage}
+                            name="confirm-password"
+                            placeholder="••••••"
+                            type="password"
+                            id="confirm-password"
+                            autoComplete="current-password"
+                            required
+                            fullWidth
+                            variant="outlined"
+                            color={confirmPasswordError ? 'error' : 'primary'}
+                        />
+                    </FormControl>
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         onClick={validateInputs}
                     >
-                        Sign in
+                        Sign Up
                     </Button>
-                    <Typography sx={{ textAlign: 'center' }}>
-                        Don&apos;t have an account?{' '}
-                        <span>
-                            <Link
-                                href="/material-ui/getting-started/templates/sign-in/"
-                                variant="body2"
-                                sx={{ alignSelf: 'center' }}
-                            >
-                                Sign up
-                            </Link>
-                        </span>
-                    </Typography>
                 </Box>
                 <Divider>or</Divider>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

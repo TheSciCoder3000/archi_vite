@@ -1,21 +1,23 @@
 .auth-container {
-    height: 100vh;
+    min-height: 100vh;
 
     background: rgb(64,32,9);
     background: radial-gradient(circle, rgb(20, 22, 31) 0%, rgba(15,16,21,1) 100%);
 
     display: flex;
+    padding: 10rem 0;
 
 
     .auth-card {
         display: flex;
         flex-direction: column;
         align-self: center;
-        width: 100%;
         gap: 1rem;
-        margin: auto;
+
+        margin: 0 auto;
         width: 30rem;
         padding: 3rem;
+
         border: 2px solid rgb(44, 47, 61);
         border-radius: 10px;
         background-color: rgba(15,16,21,1);
