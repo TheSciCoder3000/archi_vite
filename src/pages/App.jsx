@@ -5,6 +5,7 @@ import About from "./About"
 import Services from "./Services"
 import Login from "./Login"
 import Register from "./Register"
+import Contact from "./Contact"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
