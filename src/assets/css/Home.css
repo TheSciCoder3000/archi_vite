@@ -15,14 +15,13 @@ nav ul {
   padding: 0;
 }
 nav ul .nav-link {
-  color: #7d7d7d;
+  color: #747474;
 }
 nav ul .nav-link:hover {
   text-decoration: underline;
-  color: #9c9c9c;
 }
 nav ul .nav-link.active {
-  color: #E6E6E6;
+  color: #efefef;
   cursor: default;
 }
 

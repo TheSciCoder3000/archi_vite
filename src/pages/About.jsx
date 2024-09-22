@@ -6,6 +6,7 @@ import vid from "../assets/img/vid.mp4"
 import "../assets/css/About.css"
 import { useRef } from "react"
 import { useEffect } from "react"
+// import { HomeVariant } from "../utils/variants"
 
 const About = () => {
     const vidRef = useRef(null);
@@ -96,6 +97,21 @@ const About = () => {
                             ut atque id voluptate. Corrupti iure iste quas a pariatur
                             non ipsa provident tempora, hic voluptates.
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div className="founders-container">
+                <div className="founders-content">
+                    <div className="founders-item">
+                        <img src="" alt="" className="founders-img" />
+                    </div>
+                    <div className="founders-item">
+                        <img src="" alt="" className="founders-img" />
+
+                    </div>
+                    <div className="founders-item">
+                        <img src="" alt="" className="founders-img" />
+
                     </div>
                 </div>
             </div>

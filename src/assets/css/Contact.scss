@@ -1,13 +1,13 @@
 .contact-container {
     display: flex;
     height: 100vh;
+    overflow: hidden;
 
     .img-container {
-        flex: 0.7;
+        flex: 0.8;
         position: relative;
 
         .grade {
-            background-color: #1c1e259a;
             position: absolute;
             top: 0;
             left: 0;

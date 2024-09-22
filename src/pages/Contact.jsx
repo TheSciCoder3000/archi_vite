@@ -1,6 +1,6 @@
 import { FormControl, TextField, Button } from "@mui/material"
 import "../assets/css/Contact.css"
-import Hero from "../assets/img/img_1.jpg"
+import Hero from "../assets/img/gallery5.jpg"
 import { useState } from "react"
 
 const Contact = () => {
