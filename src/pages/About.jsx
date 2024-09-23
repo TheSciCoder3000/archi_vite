@@ -3,12 +3,32 @@ import TinyAboutImg from "@/assets/img/tiny-about-home.jpg"
 import ArchiTable from "@/assets/img/archi_table.jpg"
 import Overlap1 from "@/assets/img/overlap1.jpg"
 import Overlap2 from "@/assets/img/overlap2.jpg"
+
+import Michael from "@/assets/img/michael.jpg"
+import Drew from "@/assets/img/drew.jpg"
+import Evane from "@/assets/img/evane.jpg"
+
 import vid from "@/assets/img/vid.mp4"
 import "@/assets/css/About.css"
 import { useRef } from "react"
 import { useEffect } from "react"
 import { useScroll, useTransform, motion } from "framer-motion"
 import ProgressiveImage from "react-progressive-graceful-image"
+
+const ContainerVariant = {
+    initial: { scale: 1.05, transition: { type: "easeInOut" } },
+    whileHover: { scale: 1.2, transition: { type: "easeInOut" } }
+}
+
+const TextVariant = {
+    initial: { opacity: 0 },
+    whileHover: { opacity: 1 }
+}
+
+const GradeVarinat = {
+    initial: { opacity: 0.3 },
+    whileHover: { opacity: 0.6 }
+}
 
 const About = () => {
     const vidRef = useRef(null);
@@ -113,18 +133,30 @@ const About = () => {
                 </div>
             </div>
             <div className="founders-container">
+                <h2 className="archi-font">Founders</h2>
+
                 <div className="founders-content">
-                    <div className="founders-item">
-                        <img src="" alt="" className="founders-img" />
-                    </div>
-                    <div className="founders-item">
-                        <img src="" alt="" className="founders-img" />
-
-                    </div>
-                    <div className="founders-item">
-                        <img src="" alt="" className="founders-img" />
-
-                    </div>
+                    <motion.div initial="initial" whileHover="whileHover" className="founders-item">
+                        <motion.div variants={ContainerVariant} className="animation-container">
+                            <img src={Michael} alt="" className="founders-img" />
+                            <motion.div variants={GradeVarinat} className="grade" />
+                        </motion.div>
+                        <motion.h4 variants={TextVariant}>Michael Doce</motion.h4>
+                    </motion.div>
+                    <motion.div initial="initial" whileHover="whileHover" className="founders-item">
+                        <motion.div variants={ContainerVariant} className="animation-container">
+                            <img src={Evane} alt="" className="founders-img" />
+                            <motion.div variants={GradeVarinat} className="grade" />
+                        </motion.div>
+                        <motion.h4 variants={TextVariant}>Evane Pacot</motion.h4>
+                    </motion.div>
+                    <motion.div initial="initial" whileHover="whileHover" className="founders-item">
+                        <motion.div variants={ContainerVariant} className="animation-container">
+                            <img src={Drew} alt="" className="founders-img" />
+                            <motion.div variants={GradeVarinat} className="grade" />
+                        </motion.div>
+                        <motion.h4 variants={TextVariant}>Drew Alecha</motion.h4>
+                    </motion.div>
                 </div>
             </div>
         </div >

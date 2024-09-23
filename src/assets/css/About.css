@@ -144,6 +144,11 @@
   padding: 10rem 0;
   background-color: #1c1f29;
 }
+.main-about-container .founders-container h2 {
+  text-align: center;
+  color: #e0711d;
+  margin-bottom: 5rem;
+}
 .main-about-container .founders-container .founders-content {
   width: 80rem;
   margin: auto;
@@ -153,5 +158,37 @@
 .main-about-container .founders-container .founders-content .founders-item {
   height: 70vh;
   flex: 1;
-  background-color: #f7921f;
+  background-color: #1c1f29;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 7px 12px 18px -7px rgba(45, 56, 92, 0.2588235294);
+}
+.main-about-container .founders-container .founders-content .founders-item h4 {
+  font-weight: 500;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  right: 0;
+  z-index: 20;
+}
+.main-about-container .founders-container .founders-content .founders-item .animation-container {
+  width: 100%;
+  height: 100%;
+}
+.main-about-container .founders-container .founders-content .founders-item .animation-container .grade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: #1c1f29;
+  opacity: 30%;
+}
+.main-about-container .founders-container .founders-content .founders-item .animation-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=About.css.map */
