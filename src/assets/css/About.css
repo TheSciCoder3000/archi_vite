@@ -17,6 +17,15 @@
      object-fit: cover;
   height: 100%;
   width: 100%;
+  background-color: transparent;
+}
+.main-about-container .about-hero .hider {
+  background-color: #171921;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 5;
 }
 .main-about-container .about-hero .grade {
   position: absolute;
@@ -129,4 +138,20 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.main-about-container .founders-container {
+  width: 100%;
+  padding: 10rem 0;
+  background-color: #1c1f29;
+}
+.main-about-container .founders-container .founders-content {
+  width: 80rem;
+  margin: auto;
+  display: flex;
+  gap: 5rem;
+}
+.main-about-container .founders-container .founders-content .founders-item {
+  height: 70vh;
+  flex: 1;
+  background-color: #f7921f;
 }/*# sourceMappingURL=About.css.map */

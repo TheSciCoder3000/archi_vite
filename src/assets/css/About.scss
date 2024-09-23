@@ -16,6 +16,15 @@
             object-fit: cover;
             height: 100%;
             width: 100%;
+            background-color: transparent;
+        }
+        .hider {
+            background-color: #171921;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            position: absolute;
+            z-index: 5;
         }
         .grade {
             position: absolute;
@@ -148,6 +157,24 @@
                     height: 100%;
                     object-fit: cover;
                 }
+            }
+        }
+    }
+    .founders-container {
+        width: 100%;
+        padding: 10rem 0;
+        background-color: #1c1f29;
+        
+        .founders-content {
+            width: 80rem;
+            margin: auto;
+            display: flex;
+            gap: 5rem;
+
+            .founders-item {
+                height: 70vh;
+                flex: 1;
+                background-color: #f7921f;
             }
         }
     }

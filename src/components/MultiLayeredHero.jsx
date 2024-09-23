@@ -14,7 +14,14 @@ const MultiLayeredHero = () => {
 
     return (
         <div ref={ref} className="hero-container">
-            <motion.h1 style={{ y: textY }}><span>DIS</span>COVER</motion.h1>
+            <motion.div initial={{ scaleY: 1, originY: 1 }} animate={{ scaleY: 0, originY: 1, transition: { duration: 0.35 } }} exit={{ scaleY: 1 }} className="hider" />
+            <motion.h1
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
+                exit={{ opacity: 0 }}
+                style={{ y: textY }}>
+                <span>DIS</span>COVER
+            </motion.h1>
             <img className="hero-img" src={HeroImg} alt="hero_img" />
             <motion.img style={{ y: backgroundY }} className="mask-img" src={MaskImg} alt="hero_img" />
         </div>

@@ -1,4 +1,5 @@
 import ServiceImg from "../assets/img/drawing.jpg"
+import TinyServiceImg from "../assets/img/tiny-drawing.jpg"
 
 import Architect from "../assets/img/architect.jpg"
 
@@ -12,6 +13,20 @@ import Gallery7 from "../assets/img/gallery7.jpg"
 import Gallery8 from "../assets/img/gallery8.jpg"
 
 import "../assets/css/Services.css"
+
+import { motion } from 'framer-motion';
+import ProgressiveImage from "react-progressive-graceful-image"
+
+const parentVariant = {
+    initial: { opacity: 1 },
+    animate: { opacity: 1, transition: { delayChildren: 0.5, staggerChildren: 0.5, when: "beforeChildren" } },
+}
+
+const childImg = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0, transition: { delay: 0.5 } },
+    viewport: { margin: "-100px 0px -100px 0px", once: true }
+}
 
 const Services = () => {
     const serviceList = [
@@ -67,13 +82,15 @@ const Services = () => {
     return (
         <div className="main-service-container">
             <div className="service-hero">
-                <img src={ServiceImg} alt="service-hero" />
-                <div className="grade">
-                </div>
-                <div className="service-hero-text-container">
+                <ProgressiveImage src={ServiceImg} placeholder={TinyServiceImg}>
+                    {(src) => <img src={src} alt="an image" />}
+                </ProgressiveImage>
+                <div className="grade" />
+                <motion.div initial={{ scaleY: 1, originY: 1 }} animate={{ scaleY: 0, originY: 1, transition: { duration: 0.3 } }} exit={{ scaleY: 1, originY: 1 }} className="hider" />
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.5 } }} exit={{ opacity: 0 }} className="service-hero-text-container">
                     <h3>SERVICES</h3>
                     <h1>Crafting Innovative Spaces with Precision and Vision</h1>
-                </div>
+                </motion.div>
             </div>
             <div className="service-description">
                 <div className="service-content">
@@ -95,16 +112,16 @@ const Services = () => {
             <div className="service-gallery-container">
                 <h1 className="archi-font">PROJECTS</h1>
                 {serviceList.map((item, indx) =>
-                    <div key={indx} className="service-row">
-                        <div className={`service-item ${item[0].type}`}>
+                    <motion.div variants={parentVariant} initial="initial" animate="animate" key={indx} className="service-row">
+                        <motion.div variants={childImg} initial="initial" whileInView="whileInView" viewport="viewport" className={`service-item ${item[0].type}`}>
                             <img src={item[0].img} alt="" />
                             <h4 className="archi-font">{item[0].title}</h4>
-                        </div>
-                        <div className={`service-item ${item[1].type}`}>
+                        </motion.div>
+                        <motion.div variants={childImg} initial="initial" whileInView="whileInView" viewport="viewport" className={`service-item ${item[1].type}`}>
                             <img src={item[1].img} alt="" />
                             <h4 className="archi-font">{item[1].title}</h4>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 )}
             </div>
         </div >

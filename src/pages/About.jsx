@@ -1,36 +1,48 @@
-import AboutImg from "../assets/img/about-home.jpg"
-import ArchiTable from "../assets/img/archi_table.jpg"
-import Overlap1 from "../assets/img/overlap1.jpg"
-import Overlap2 from "../assets/img/overlap2.jpg"
-import vid from "../assets/img/vid.mp4"
-import "../assets/css/About.css"
+import AboutImg from "@/assets/img/about-home.jpg"
+import TinyAboutImg from "@/assets/img/tiny-about-home.jpg"
+import ArchiTable from "@/assets/img/archi_table.jpg"
+import Overlap1 from "@/assets/img/overlap1.jpg"
+import Overlap2 from "@/assets/img/overlap2.jpg"
+import vid from "@/assets/img/vid.mp4"
+import "@/assets/css/About.css"
 import { useRef } from "react"
 import { useEffect } from "react"
-// import { HomeVariant } from "../utils/variants"
+import { useScroll, useTransform, motion } from "framer-motion"
+import ProgressiveImage from "react-progressive-graceful-image"
 
 const About = () => {
     const vidRef = useRef(null);
+    const contentRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: contentRef
+    });
+
+    const level = useTransform(scrollYProgress, [0, 1], ["0", "100%"])
+
     useEffect(() => {
         if (vidRef != null) {
             vidRef.current.playbackRate = 0.5;
         }
     }, [])
+
     return (
         <div className="main-about-container">
             <div className="about-hero">
-                <img src={AboutImg} alt="about-hero" />
-                <div className="grade">
-                </div>
-                <div className="about-hero-text-container">
-                    <h3>ABOUT US</h3>
+                <ProgressiveImage src={AboutImg} placeholder={TinyAboutImg}>
+                    {(src) => <img src={src} alt="an image" />}
+                </ProgressiveImage>
+                <div className="grade" />
+                <motion.div initial={{ scaleY: 1, originY: 1 }} animate={{ scaleY: 0, originY: 1, transition: { duration: 0.3 } }} exit={{ scaleY: 1, originY: 1 }} className="hider" />
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.5 } }} exit={{ opacity: 0 }} className="about-hero-text-container">
+                    <h3 >ABOUT US</h3>
                     <h1>Shaping Spaces,<br /> Inspiring Lives</h1>
-                </div>
+                </motion.div>
             </div>
-            <div className="vid-container">
+            <motion.div style={{ opacity: level }} className="vid-container">
                 <div className="vid-grade" />
                 <video ref={vidRef} src={vid} autoPlay muted loop />
-            </div>
-            <div className="about-description">
+            </motion.div>
+            <div ref={contentRef} className="about-description">
                 <div className="img-container">
                     <img src={ArchiTable} alt="archi-table" />
                 </div>

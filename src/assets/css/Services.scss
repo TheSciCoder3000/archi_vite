@@ -6,6 +6,7 @@
     background-color: #171921;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 
     .service-hero {
         height: 74vh;
@@ -16,6 +17,14 @@
             object-fit: cover;
             height: 100%;
             width: 100%;
+        }
+        .hider {
+            background-color: #171921;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            position: absolute;
+            z-index: 5;
         }
         .grade {
             position: absolute;
@@ -54,7 +63,7 @@
 
     .service-description {
         background-color: #1c1f29;
-        padding: 10rem 5rem;
+        padding: 26vh 5rem;
         width: 100%;
         
         .service-content {

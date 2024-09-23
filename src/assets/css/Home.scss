@@ -37,6 +37,15 @@ nav {
     overflow: hidden;
     height: 100vh;
 
+    .hider {
+        background-color: #171921;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        position: absolute;
+        z-index: 30;
+    }
+
     h1 {
         position: relative;
         z-index: 10;

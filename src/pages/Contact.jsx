@@ -1,7 +1,10 @@
 import { FormControl, TextField, Button } from "@mui/material"
 import "@/assets/css/Contact.css"
 import Hero from "@/assets/img/gallery5.jpg"
+import TinyHero from "@/assets/img/tiny-gallery5.jpg"
 import { useState } from "react"
+import { motion } from "framer-motion"
+import ProgressiveImage from "react-progressive-graceful-image"
 
 const Contact = () => {
     const [isValid, setIsValid] = useState(false);
@@ -44,8 +47,11 @@ const Contact = () => {
     return (
         <div className="contact-container">
             <div className="img-container">
-                <div className="grade"></div>
-                <img src={Hero} alt="" />
+                <div className="grade" />
+                <motion.div initial={{ scaleX: 1, originX: 1 }} animate={{ scaleX: 0, originX: 1, transition: { duration: 0.2 } }} exit={{ scaleX: 1, originX: 1 }} className="hider" />
+                <ProgressiveImage src={Hero} placeholder={TinyHero}>
+                    {(src) => <img src={src} alt="an image" />}
+                </ProgressiveImage>
             </div>
             <div className="contact-form-container">
                 <form method="POST" onSubmit={onSubmit}>
